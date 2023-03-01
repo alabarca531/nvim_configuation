@@ -1,0 +1,1 @@
+require('alabarca-vscode.remap')
