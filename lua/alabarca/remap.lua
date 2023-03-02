@@ -35,3 +35,6 @@ vim.cmd[[
 vim.cmd[[ 
     imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")
 ]]
+
+-- Set Leader dd to close current buffer and open previous buffer
+vim.keymap.set("n", "<leader>dd", ":bd<CR>:bp<CR>")

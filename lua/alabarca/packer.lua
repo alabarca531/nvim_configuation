@@ -18,19 +18,15 @@ return require('packer').startup(function(use)
           vim.cmd('colorscheme rose-pine')
       end
     })
-
-    -- colorscheme 
-    -- use({
-    --     'AlexvZyl/nordic.nvim',
-    --     as = 'nordic',
-    --     config = function()
-    --         vim.cmd('colorscheme nordic')
-    --     end
-    -- })
+    -- Treesitter
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
+
+    -- Harpoon
     use('theprimeagen/harpoon')
+    -- Undotree
     use('mbbill/undotree')
+    -- Vim-Fuguitive
     use('tpope/vim-fugitive')
     -- Nvim Tree 
     use {

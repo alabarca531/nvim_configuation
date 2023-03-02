@@ -17,4 +17,9 @@ require("nvim-tree").setup({
 })
 
 -- Add keymap to toggle nvim-tree
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>tt", ":NvimTreeFocus<CR>")
+vim.keymap.set("n", "<leader>tr", ":NvimTreeRefresh<CR>")
+vim.keymap.set("n", "<leader>td", ":NvimTreeToggle<CR>")
+
+-- add keymap to go back to last buffer 
+vim.keymap.set("n", "<leader>bb", ":b#<CR>")
