@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/nvim-treesitter-textobjects')
   use('nvim-treesitter/playground')
-
   -- Harpoon
   use('theprimeagen/harpoon')
   -- Undotree
@@ -66,28 +65,37 @@ return require('packer').startup(function(use)
   -- Autoclsoe tabs
   use 'rstacruz/vim-closer'
   -- -- LaTeX in Vim packages
-  use('lervag/vimtex')
-  use('tpope/vim-dispatch')
-  use({
-    "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    tag = "v<CurrentMajor>.*",
-    -- install jsregexp (optional!:).
-    run = "make install_jsregexp"
-  })
+  use({'lervag/vimtex', ft = {'tex'}})
 
+  use('tpope/vim-dispatch')
   -- commment out
   use('tpope/vim-commentary')
-
   -- Indent lines
   use "lukas-reineke/indent-blankline.nvim"
-
   -- LuaLine
   use 'nvim-lualine/lualine.nvim'
-
   -- Attempt 2 at bufferline
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-
   -- tabnine-nvim
   use {'codota/tabnine-nvim', run = "./dl_binaries.sh"}
+  -- neorg
+  use {
+    "nvim-neorg/neorg",
+    ft = "norg",
+    after = "nvim-treesitter",
+    "telescope.nvim",
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.norg.dirman"] = { -- Manages Neorg workspaces
+            config = {workspaces = {notes = "~/notes"}}
+          }
+        }
+      }
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim"
+  }
 end)
