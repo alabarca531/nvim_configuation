@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
   -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+    branch = 'v2.x',
     requires = {
       -- LSP Support
       {'williamboman/mason.nvim'}, -- Optional
@@ -78,24 +78,4 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   -- tabnine-nvim
   use {'codota/tabnine-nvim', run = "./dl_binaries.sh"}
-  -- neorg
-  use {
-    "nvim-neorg/neorg",
-    ft = "norg",
-    after = "nvim-treesitter",
-    "telescope.nvim",
-    config = function()
-      require('neorg').setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.norg.dirman"] = { -- Manages Neorg workspaces
-            config = {workspaces = {notes = "~/notes"}}
-          }
-        }
-      }
-    end,
-    run = ":Neorg sync-parsers",
-    requires = "nvim-lua/plenary.nvim"
-  }
 end)

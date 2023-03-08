@@ -3,10 +3,12 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({'pyright', 'tsserver'})
-
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {settings = {Lua = {diagnostics = {globals = {'vim'}}}}})
+-- lsp.configure('sumneko_lua', {settings = {Lua = {diagnostics = {globals = {'vim'}}}}})
+-- lsp.lua.setup({settings = {Lua = {diagnostics = {globals = {'vim'}}}}})
+-- require'lspconfig'.sumneko_lua.setup {settings = {Lua = {diagnostics = {globals = {'vim'}}}}}
 
+lsp.nvim_workspace({library = vim.api.nvim_get_runtime_file('', true)})
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
