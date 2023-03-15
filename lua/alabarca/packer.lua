@@ -78,4 +78,7 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   -- tabnine-nvim
   use {'codota/tabnine-nvim', run = "./dl_binaries.sh"}
+
+  -- Pomodoro
+  use {'wthollingsworth/pomodoro.nvim', requires = 'MunifTanjim/nui.nvim'}
 end)
