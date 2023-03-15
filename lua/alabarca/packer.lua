@@ -60,6 +60,13 @@ return require('packer').startup(function(use)
       {'onsails/lspkind-nvim'}
     }
   }
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end
+  }
+
   -- Terminal in Neovim
   use "akinsho/toggleterm.nvim"
   -- Autoclsoe tabs
@@ -81,4 +88,13 @@ return require('packer').startup(function(use)
 
   -- Pomodoro
   use {'wthollingsworth/pomodoro.nvim', requires = 'MunifTanjim/nui.nvim'}
+
+  -- Git signs
+  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+
+  -- Symbols outline
+  use {'simrat39/symbols-outline.nvim'}
+
+  -- Discord
+  use {'andweeb/presence.nvim'}
 end)
