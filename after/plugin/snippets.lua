@@ -14,7 +14,7 @@ ls.snippets = {
   },
   python = {s("main", f({"if __name__ == '__main__':", "\t${1:main()}"}))},
   -- LaTeX snippets
-  tex = {
+  latex = {
     -- Equation environment
     s("eq", f({"\\begin{equation}", "\t${1:equation}", "\\end{equation}"})),
     -- Equation* environment

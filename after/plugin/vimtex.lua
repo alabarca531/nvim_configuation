@@ -32,6 +32,15 @@ let g:vimtex_compiler_latexmk = {
         \   '-interaction=nonstopmode',
         \ ],
         \}
+let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull \\hbox',
+      \ 'Overfull \\hbox',
+      \ 'LaTeX Warning: .\+ float specifier changed to',
+      \ 'LaTeX hooks Warning',
+      \ 'Package siunitx Warning: Detected the "physics" package:',
+      \ 'Package hyperref Warning: Token not allowed in a PDF string',
+      \]
 
 " Viewer options: One may configure the viewer either by specifying a built-in
 " viewer method:
@@ -53,3 +62,9 @@ let g:vimtex_compiler_latexmk = {
 " let maplocalleader = ","
 
   ]]
+-- Set Leader wc to count words in VimTex
+vim.keymap.set("n", "<leader>wc", ":VimtexCountWords<CR>")
+-- Set Leader c to save the file and single shot compile in VimTeX
+-- set Leader S to <cmd>update<cr> and <cmd>VimtexCompileSS<cr>
+vim.keymap.set("n", "<leader>c", ":update<CR>:VimtexCompileSS<CR>")
+-- vim.keymap.set("n", "<leader>c", ":VimtexCompileSS<CR>")

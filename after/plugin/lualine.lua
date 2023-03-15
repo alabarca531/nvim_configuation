@@ -156,6 +156,7 @@ ins_left {
 }
 
 ins_left {"tabnine"}
+-- ins_left {"lsp_progress"}
 ins_left {
   -- Lsp server name .
   function()
