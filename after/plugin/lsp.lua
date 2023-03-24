@@ -72,3 +72,7 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({virtual_text = true})
+-- Press <leader>le to show the list of errors
+vim.keymap.set("n", "<leader>le", function()
+  vim.diagnostic.setqflist()
+end, {noremap = true, silent = true})

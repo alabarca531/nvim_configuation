@@ -23,11 +23,7 @@ BL.setup({
       return s
     end,
     offsets = {
-      filetype = "NvimTree",
-      text = "File Explorer",
-      highlight = "Directory",
-      text_align = "left",
-      separator = true
+      {filetype = "NvimTree", text = "File Explorer", highlight = "Directory", text_align = "left"}
     },
     color_icons = true,
     show_buffer_close_icon = true,
