@@ -1,3 +1,6 @@
-require('alabarca-vscode.remap')
+require("alabarca-vscode.remap")
 
--- Set color scheme to nothing 
+-- Disable theme
+vim.cmd("colorscheme default")
+-- Turn syntax highlighting off
+vim.o.syntax = "off"

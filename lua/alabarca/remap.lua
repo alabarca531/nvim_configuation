@@ -12,14 +12,14 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("x", "<leader>p", "\"_DP")
+vim.keymap.set("x", "<leader>p", '"_DP')
 
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
 
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
 
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 -- vim.cmd [[
@@ -32,9 +32,11 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>
 -- ]]
 
 -- Set Copilot autocomplete to Shift + Tab for insert mode
-vim.cmd [[
+vim.cmd([[
     imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")
-]]
+]])
 
 -- Set Leader dd to close current buffer and open previous buffer
 vim.keymap.set("n", "<leader>dd", ":bd<CR>:bp<CR>")
+local opt = {noremap = true, silent = true}
+vim.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opt)

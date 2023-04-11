@@ -1,7 +1,7 @@
 -- vimtex options
 -- In Vim syntax,
 -- Start VimTeX Compiler with :VimTexCompile
-vim.cmd [[
+vim.cmd([[
 packadd vimtex
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
@@ -61,10 +61,10 @@ let g:vimtex_quickfix_ignore_filters = [
 " following line. The default is usually fine and is the symbol "\".
 " let maplocalleader = ","
 
-  ]]
+  ]])
 -- Set Leader wc to count words in VimTex
 vim.keymap.set("n", "<leader>wc", ":VimtexCountWords<CR>")
 -- Set Leader c to save the file and single shot compile in VimTeX
 -- set Leader S to <cmd>update<cr> and <cmd>VimtexCompileSS<cr>
-vim.keymap.set("n", "<leader>c", ":update<CR>:VimtexCompileSS<CR>")
+vim.keymap.set("n", "<leader>vtc", ":update<CR>:VimtexCompileSS<CR>")
 -- vim.keymap.set("n", "<leader>c", ":VimtexCompileSS<CR>")

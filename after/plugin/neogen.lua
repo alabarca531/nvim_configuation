@@ -1,0 +1,41 @@
+local neogen = require("neogen")
+neogen.setup({
+  -- -- Enable/disable the default (fallback) snippet
+  enabled = true,
+  -- List of languages to generate snippets for
+  languages = {
+    lua = {template = {annotation_convention = "ldoc"}},
+    python = {template = {annotation_convention = "google_docstrings"}},
+    rust = {template = {annotation_convention = "rustdoc"}},
+    typescript = {template = {annotation_convention = "tsdoc"}},
+    javascript = {template = {annotation_convention = "jsdoc"}},
+    typescriptreact = {template = {annotation_convention = "tsdoc"}}
+  },
+  keys = {
+    {
+      "<leader>cgd",
+      function()
+        require("neogen").generate()
+      end,
+      desc = "Annotation"
+    }, {
+      "<leader>cgc",
+      function()
+        require("neogen").generate({type = "class"})
+      end,
+      desc = "Class"
+    }, {
+      "<leader>cgf",
+      function()
+        require("neogen").generate({type = "func"})
+      end,
+      desc = "Function"
+    }, {
+      "<leader>cgt",
+      function()
+        require("neogen").generate({type = "type"})
+      end,
+      desc = "Type"
+    }
+  }
+})

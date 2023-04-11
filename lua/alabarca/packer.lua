@@ -94,4 +94,26 @@ return require("packer").startup(function(use)
 
   -- Smart Splits
   use("mrjones2014/smart-splits.nvim")
+
+  -- Code annotation
+  use({
+    "danymat/neogen",
+    config = function()
+      local neogen = require("neogen")
+      neogen.setup({
+        snippet_engine = "luasnip",
+        -- -- Enable/disable the default (fallback) snippet
+        enabled = true,
+        -- List of languages to generate snippets for
+        languages = {
+          lua = {template = {annotation_convention = "ldoc"}},
+          python = {template = {annotation_convention = "numpydoc"}},
+          rust = {template = {annotation_convention = "rustdoc"}},
+          typescript = {template = {annotation_convention = "tsdoc"}},
+          javascript = {template = {annotation_convention = "jsdoc"}},
+          typescriptreact = {template = {annotation_convention = "tsdoc"}}
+        }
+      })
+    end
+  })
 end)
