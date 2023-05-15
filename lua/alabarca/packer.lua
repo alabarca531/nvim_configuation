@@ -11,7 +11,8 @@ return require("packer").startup(function(use)
     -- or                            , branch = '0.1.x',
     requires = {{"nvim-lua/plenary.nvim"}}
   })
-  use({"bluz71/vim-nightfly-colors", as = "nightfly"})
+  use 'marko-cerovac/material.nvim'
+  -- use({"bluz71/vim-nightfly-colors", as = "nightfly"})
   -- use({
   --   'rose-pine/neovim',
   --   as = 'rose-pine',
@@ -92,28 +93,56 @@ return require("packer").startup(function(use)
   -- Discord
   use({"andweeb/presence.nvim"})
 
+  -- Which Key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  -- Trouble
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+
   -- Smart Splits
-  use("mrjones2014/smart-splits.nvim")
+  -- use("mrjones2014/smart-splits.nvim")
 
   -- Code annotation
-  use({
-    "danymat/neogen",
-    config = function()
-      local neogen = require("neogen")
-      neogen.setup({
-        snippet_engine = "luasnip",
-        -- -- Enable/disable the default (fallback) snippet
-        enabled = true,
-        -- List of languages to generate snippets for
-        languages = {
-          lua = {template = {annotation_convention = "ldoc"}},
-          python = {template = {annotation_convention = "numpydoc"}},
-          rust = {template = {annotation_convention = "rustdoc"}},
-          typescript = {template = {annotation_convention = "tsdoc"}},
-          javascript = {template = {annotation_convention = "jsdoc"}},
-          typescriptreact = {template = {annotation_convention = "tsdoc"}}
-        }
-      })
-    end
-  })
+  -- use({
+  --   "danymat/neogen",
+  --   config = function()
+  --     local neogen = require("neogen")
+  --     neogen.setup({
+  --       snippet_engine = "luasnip",
+  --       -- -- Enable/disable the default (fallback) snippet
+  --       enabled = true,
+  --       -- List of languages to generate snippets for
+  --       languages = {
+  --         lua = {template = {annotation_convention = "ldoc"}},
+  --         python = {template = {annotation_convention = "numpydoc"}},
+  --         rust = {template = {annotation_convention = "rustdoc"}},
+  --         typescript = {template = {annotation_convention = "tsdoc"}},
+  --         javascript = {template = {annotation_convention = "jsdoc"}},
+  --         typescriptreact = {template = {annotation_convention = "tsdoc"}}
+  --       }
+  --     })
+  --   end
+  -- })
 end)
