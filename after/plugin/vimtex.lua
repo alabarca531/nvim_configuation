@@ -44,6 +44,15 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'Package hyperref Warning: Token not allowed in a PDF string',
       \]
 
+let g:vimtex_view_method = 'skim'
+let g:vimtex_view_general_viewer = 'skim'
+
+let g:vimtex_view_skim_sync = 1
+
+nmap <localleader>v <plug>(vimtex-view)
+
+
+
 " Viewer options: One may configure the viewer either by specifying a built-in
 " viewer method:
 "- let g:vimtex_view_method = 'zathura'

@@ -2,7 +2,7 @@ require("nvim-treesitter.install").compilers = {"clang", "gcc"}
 ---@diagnostic disable-next-line: missing-fields
 require("nvim-treesitter.configs").setup({
   -- A list of parser names, or "all" (the four listed parsers should always be installed)
-  ensure_installed = {"javascript", "typescript", "c", "lua", "vim", "rust"},
+  ensure_installed = {"lua", "vim", "python", "cpp"},
   -- ensure_installed = "all",
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = true,

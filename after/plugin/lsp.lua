@@ -4,7 +4,7 @@ lsp.preset("recommended")
 
 require("lspconfig").grammarly.setup({})
 
-lsp.ensure_installed({"pyright", "tsserver"})
+lsp.ensure_installed({"pyright"})
 -- Fix Undefined global 'vim'
 -- lsp.configure('sumneko_lua', {settings = {Lua = {diagnostics = {globals = {'vim'}}}}})
 -- lsp.lua.setup({settings = {Lua = {diagnostics = {globals = {'vim'}}}}})

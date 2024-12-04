@@ -14,6 +14,7 @@ return require('packer').startup(function(use) -- Packer can manage itself
 
 	-- Color Theme
 	use 'marko-cerovac/material.nvim'
+    use 'EdenEast/nightfox.nvim'
 
 	-- Treesitter
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -71,4 +72,12 @@ return require('packer').startup(function(use) -- Packer can manage itself
 			  {"onsails/lspkind-nvim"}
 		  }
 	  })
+
+    -- Status Line
+    use({"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}})
+    -- LSP status
+    use({"nvim-lua/lsp-status.nvim"})
+    -- -- Bufferline
+    -- use("akinsho/nvim-bufferline.lua")
+
 end)
