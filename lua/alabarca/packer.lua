@@ -77,7 +77,9 @@ return require('packer').startup(function(use) -- Packer can manage itself
     use({"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}})
     -- LSP status
     use({"nvim-lua/lsp-status.nvim"})
-    -- -- Bufferline
-    -- use("akinsho/nvim-bufferline.lua")
 
+    -- Todo Comments 
+    use({"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"})
+
+    -- To Do List 
 end)

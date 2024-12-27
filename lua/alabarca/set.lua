@@ -29,3 +29,8 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
+-- Set vsplit to right, split to bottom 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+

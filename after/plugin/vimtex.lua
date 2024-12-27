@@ -19,6 +19,7 @@ let g:vimtex_indent_enabled   = 1      " turn off VimTeX indentation
 let g:vimtex_imaps_enabled    = 1      " disable insert mode mappings (e.g. if you use UltiSnips)
 let g:vimtex_complete_enabled = 1      " turn off completion
 let g:vimtex_syntax_enabled   = 1      " disable syntax concea
+" Set Engine to lualatex
 let g:vimtex_compiler_latexmk = {
         \ 'aux_dir' : 'build',
         \ 'build_dir' : 'build',
