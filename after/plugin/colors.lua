@@ -41,10 +41,8 @@ require('nightfox').setup({
   groups = {},
 })
 
--- setup must be called before loading
--- vim.cmd("colorscheme nightfox") 
--- ColorMyPencils()
-
+-- highlight the current line and column 
+vim.api.nvim_command('autocmd WinEnter * set cursorline')
 
 -- require('material').setup({
 --
@@ -115,10 +113,6 @@ require('nightfox').setup({
 vim.cmd [[
     highlight CopilotSuggestion ctermfg=37   guifg=#00afaf
     highlight CopilotSuggestionSelected guifg=#555555 ctermfg=8
-]]
--- Color tabnine autocomplete color is yellow
-vim.cmd [[
-    hi TabNinePopup ctermfg=3
 ]]
 
 
