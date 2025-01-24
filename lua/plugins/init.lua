@@ -7,8 +7,8 @@ return {
     },
 
     -- Color Theme
-    -- 'marko-cerovac/material.nvim',
-    'EdenEast/nightfox.nvim',
+    'marko-cerovac/material.nvim',
+    -- 'EdenEast/nightfox.nvim',
 
     -- Treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -25,7 +25,7 @@ return {
     --Nvim Tree
     { 
         "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" , "echasnovski/mini.nvim" },
         on_attach = on_attach 
     },
 
