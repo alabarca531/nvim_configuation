@@ -34,11 +34,15 @@ My personal Neovim setup with modern IDE features, including LSP support, autoco
 ├── init.lua              # Entry point
 ├── lua/
 │   └── alabarca/        # Configuration modules
-│       ├── init.lua     # Main config loader
-│       ├── packer.lua   # Plugin definitions
 │       ├── remap.lua    # Key mappings
 │       └── set.lua      # Vim settings
-└── after/plugin/        # Plugin-specific configs
+│   └── plugins/        # Plugin management
+│       ├── *.lua       # Configuration for each plugin 
+│       └── init.lua      # Plugin manager setup
+└── after/plugin/        # More plugin-specific configs
+│   └── *.lua         # Plugin-specific configurations
+
+
 ```
 
 ## Language Support
@@ -77,23 +81,3 @@ AI code completion offering:
 - Multi-line completion
 - Language-aware context
 
-## Customization
-Modify configuration in:
-- `packer.lua` - Add/remove plugins
-- `remap.lua` - Modify key mappings
-- `set.lua` - Change Vim settings
-- `plugin/` - Adjust plugin configs
-
-## Contributing
-Feel free to submit issues and enhancement requests!
-
-## Acknowledgments
-Special thanks to the creators and maintainers of:
-- Packer
-- Telescope
-- NvimTree
-- LSP-Zero
-- And all other plugins used in this configuration
-
-## License
-MIT
