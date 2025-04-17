@@ -7,8 +7,9 @@ return {
     },
 
     -- Color Theme
-    'marko-cerovac/material.nvim',
+    -- 'marko-cerovac/material.nvim',
     -- 'EdenEast/nightfox.nvim',
+    -- 'folke/tokyonight.nvim',
 
     -- Treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -23,10 +24,10 @@ return {
     'tpope/vim-fugitive',
 
     --Nvim Tree
-    { 
+    {
         "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" , "echasnovski/mini.nvim" },
-        on_attach = on_attach 
+        dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.nvim" },
+        -- on_attach = on_attach
     },
 
     -- Terminal in Neovim
@@ -36,10 +37,14 @@ return {
     -- Discord Presence
     { "andweeb/presence.nvim" },
     -- Commenting
-    { "numToStr/Comment.nvim", config = function() require('Comment').setup() end },
+    {
+        "numToStr/Comment.nvim",
+        config = function()
+            require('Comment').setup()
+        end
+    },
 
-    -- LSP
-    -- LSP
+    -- LSP:
     {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v2.x",
@@ -51,10 +56,10 @@ return {
             -- Autocompletion
             { "hrsh7th/nvim-cmp" },                  -- Required
             { "hrsh7th/cmp-nvim-lsp" },              -- Required
-            { "hrsh7th/cmp-buffer" },                -- Optional
-            { "hrsh7th/cmp-path" },                  -- Optional
-            { "saadparwaiz1/cmp_luasnip" },          -- Optional
-            { "hrsh7th/cmp-nvim-lua" },              -- Optional
+            -- { "hrsh7th/cmp-buffer" },                -- Optional
+            -- { "hrsh7th/cmp-path" },                  -- Optional
+            -- { "saadparwaiz1/cmp_luasnip" },          -- Optional
+            -- { "hrsh7th/cmp-nvim-lua" },              -- Optional
             {
                 "zbirenbaum/copilot.lua",
                 cmd = "Copilot",       -- Load only when the Copilot command is used
@@ -81,18 +86,20 @@ return {
                 end,
             },
             -- Snippets
-            { "L3MON4D3/LuaSnip" },                -- Required
-            { "rafamadriz/friendly-snippets" },    -- Optional
+            { "L3MON4D3/LuaSnip" },             -- Required
+            { "rafamadriz/friendly-snippets" }, -- Optional
             -- DAP support
             -- { "jose-elias-alvarez/null-ls.nvim" }, -- Formatter
-            { "jay-babu/mason-null-ls.nvim" },     -- Integrator
+            { "jay-babu/mason-null-ls.nvim" }, -- Integrator
             { 'folke/trouble.nvim' },
             { 'folke/lsp-colors.nvim' },
-            { 'folke/lsp-trouble.nvim' },
             -- VSCode like pictograms
             { "onsails/lspkind-nvim" }
         }
     },
+
+    -- Grammar with Harper - Configuration moved to lua/plugins/harper_setup.lua
+    -- { import = "plugins.harper_setup" },
 
     -- Status Line
     -- LSP status

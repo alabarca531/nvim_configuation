@@ -9,11 +9,21 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
+vim.opt.linebreak = true
+vim.opt.showbreak = "↪"
+vim.opt.textwidth = 80
+vim.opt.wrapmargin = 80
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+
+-- Set Spellcheck 
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+-- Set directory for spell files
+vim.opt.spellfile = os.getenv("HOME") .. "/.config/nvim/spell/en.utf-8.add"
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

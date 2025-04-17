@@ -1,0 +1,62 @@
+return {
+    -- "williamboman/mason.nvim",
+    -- dependencies = {
+    --     "neovim/nvim-lspconfig",
+    --     "hrsh7th/cmp-nvim-lsp",
+    --     "williamboman/mason-lspconfig.nvim",
+    -- },
+    -- config = function()
+    --     require("mason").setup()
+        
+    --     -- Create the spell directory if it doesn't exist
+    --     local spell_dir = vim.fn.expand("~/.config/nvim/spell")
+    --     if vim.fn.isdirectory(spell_dir) == 0 then
+    --         vim.fn.mkdir(spell_dir, "p")
+    --     end
+        
+    --     -- Create an empty dictionary file if it doesn't exist
+    --     local dict_path = spell_dir .. "/en.utf-8.add"
+    --     if vim.fn.filereadable(dict_path) == 0 then
+    --         local file = io.open(dict_path, "w")
+    --         if file then file:close() end
+    --         -- Generate the binary .spl file
+    --         vim.cmd("mkspell! " .. dict_path)
+    --     end
+
+    --     -- Setup Harper with your spell check dictionary
+    --     local harper_client
+    --     harper_client = require("lspconfig").harper_ls.setup({
+    --         settings = {
+    --             harper_ls = {
+    --                 dictionaryPaths = {
+    --                     vim.fn.expand("~/.config/nvim/spell/en.utf-8.add"),
+    --                 },
+    --                 userDictionaryPath = vim.fn.expand("~/.config/nvim/spell/en.utf-8.add"),
+    --             },
+    --         },
+    --         flags = {
+    --             debounce_text_changes = 150,
+    --         },
+    --         capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    --         filetypes = { "tex", "markdown", "text", "bib", "sty", "cls" },
+    --         on_attach = function(client, bufnr)
+    --             -- Create command to reload dictionary
+    --             vim.api.nvim_create_user_command("HarperReloadDict", function()
+    --                 -- Regenerate spell file
+    --                 vim.cmd("mkspell! " .. vim.fn.expand("~/.config/nvim/spell/en.utf-8.add"))
+    --                 -- Restart Harper
+    --                 -- vim.cmd("LspRestart harper_ls")
+    --             end, {})
+    --         end,
+    --     })
+        
+    --     -- Ensure Harper is installed via Mason
+    --     require("mason-registry").refresh(function()
+    --         local harper = require("mason-registry").get_package("harper-ls")
+    --         if not harper:is_installed() then
+    --             vim.notify("Installing Harper...", vim.log.levels.INFO)
+    --             harper:install()
+    --         end
+    --     end)
+    -- end,
+}

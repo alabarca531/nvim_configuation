@@ -2,13 +2,7 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-require("lspconfig").grammarly.setup({})
-
 lsp.ensure_installed({"pyright"})
--- Fix Undefined global 'vim'
--- lsp.configure('sumneko_lua', {settings = {Lua = {diagnostics = {globals = {'vim'}}}}})
--- lsp.lua.setup({settings = {Lua = {diagnostics = {globals = {'vim'}}}}})
--- require'lspconfig'.sumneko_lua.setup {settings = {Lua = {diagnostics = {globals = {'vim'}}}}}
 
 lsp.nvim_workspace({library = vim.api.nvim_get_runtime_file("", true)})
 local cmp = require("cmp")
@@ -52,12 +46,12 @@ lsp.on_attach(function(_, bufnr)
     vim.diagnostic.open_float()
   end, opts)
   -- go to references
-  vim.keymap.set("n", "[d", function()
-    vim.diagnostic.goto_next()
-  end, opts)
-  vim.keymap.set("n", "]d", function()
-    vim.diagnostic.goto_prev()
-  end, opts)
+  -- vim.keymap.set("n", "[d", function()
+  --   vim.diagnostic.goto_next()
+  -- end, opts)
+  -- vim.keymap.set("n", "]d", function()
+  --   vim.diagnostic.goto_prev()
+  -- end, opts)
   vim.keymap.set("n", "<leader>vca", function()
     vim.lsp.buf.code_action()
   end, opts)
@@ -75,6 +69,8 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({virtual_text = true})
+-- vim.diagnostic.config({virtual_lines = true})
+
 -- Press <leader>le to show the list of errors
 vim.keymap.set("n", "<leader>le", function()
   vim.diagnostic.setqflist()

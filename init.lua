@@ -6,6 +6,7 @@
 -- Check if running inside VSCode
 if vim.g.vscode then
     -- load no plugins
+    -- require("alabarca.remap")
 else
     -- Load the configuration otherwise
     require("alabarca.remap")
