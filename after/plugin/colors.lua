@@ -113,5 +113,5 @@ vim.cmd [[
 ColorMyPencils()
 
  -- set shortcut cmd-shift-u to refresh color 
-vim.api.nvim_set_keymap('n', '<D-u>', ':lua ColorMyPencils()<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<D-u>', ':lua ColorMyPencils()<CR>', {noremap = true, silent = true})
 

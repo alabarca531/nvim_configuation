@@ -34,6 +34,7 @@ return {
             executable = 'latexmk',
             hooks = {},
             options = {
+                '-pdf',
                 '-verbose',
                 '-file-line-error',
                 '-synctex=1',

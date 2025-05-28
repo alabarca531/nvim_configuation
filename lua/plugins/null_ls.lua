@@ -39,6 +39,7 @@ return {
         null_ls.setup({
             sources = {
                 b.formatting.clang_format,
+                b.formatting.black,
                 -- null_ls.builtins.formatting.black.with_args({ extra_args = { "--line-length", "88" } }),
                 -- b.formatting.beautysh,
                 -- b.formatting.jupytext,
