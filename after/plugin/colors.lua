@@ -34,8 +34,8 @@
 --   groups = {},
 -- })
 
--- highlight the current line and column 
-vim.api.nvim_command('autocmd WinEnter * set cursorline')
+-- highlight the current line and column
+vim.api.nvim_command("autocmd WinEnter * set cursorline")
 
 -- require('material').setup({
 --
@@ -100,18 +100,22 @@ vim.api.nvim_command('autocmd WinEnter * set cursorline')
 --
 --     custom_highlights = {}, -- Overwrite highlights with your own
 -- })
+--
+--
 
-
--- Color copilot autonomplete color is cyan
-vim.cmd [[
+-- Color copilot autocomplete color is cyan
+vim.cmd([[
     highlight CopilotSuggestion ctermfg=37   guifg=#00afaf
     highlight CopilotSuggestionSelected guifg=#555555 ctermfg=8
-]]
+]])
 
+-- Load the ColorMyPencils function
+require('plugins.color')
 
+-- Apply the colorscheme (this will use monokai-pro by default)
+-- ColorMyPencils()
 
-ColorMyPencils()
-
- -- set shortcut cmd-shift-u to refresh color 
--- vim.api.nvim_set_keymap('n', '<D-u>', ':lua ColorMyPencils()<CR>', {noremap = true, silent = true})
-
+-- Set shortcut cmd-shift-u to refresh color
+vim.api.nvim_set_keymap('n', '<D-S-u>', ':lua ColorMyPencils()<CR>', {noremap = true, silent = true})
+-- Alternative shortcut for non-Mac users
+vim.api.nvim_set_keymap('n', '<leader>cc', ':lua ColorMyPencils()<CR>', {noremap = true, silent = true})
